@@ -13,8 +13,9 @@ Route::get('/about', function () {
     return view('about', ['name' => 'Kaka Praditha', 'title' => 'About']);
 });
 
-Route::get('/posts/{slug}', function ($slug) {
-    $post = Post::find($slug);
+Route::get('/posts/{post:slug}', function (Post $post) {
+    
+    // $post = Post::find($id);
 
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
